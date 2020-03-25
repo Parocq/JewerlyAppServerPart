@@ -3,9 +3,10 @@ package by.bsuir.german.service;
 import by.bsuir.german.entity.*;
 import javafx.collections.ObservableList;
 
+import java.rmi.Remote;
 import java.util.List;
 
-public interface ILogic {
+public interface ILogic extends Remote {
     void fillStorage(Storage st);
 
     void sortMetalByTitle(List<Metal> list);

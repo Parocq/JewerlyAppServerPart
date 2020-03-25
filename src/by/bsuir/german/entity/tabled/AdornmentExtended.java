@@ -2,9 +2,7 @@ package by.bsuir.german.entity.tabled;
 
 import by.bsuir.german.entity.Adornment;
 import by.bsuir.german.service.Logic;
-import by.bsuir.german.service.Storage;
-
-import java.util.List;
+import by.bsuir.german.entity.Storage;
 
 public class AdornmentExtended {
     private String title;

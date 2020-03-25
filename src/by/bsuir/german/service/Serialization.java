@@ -1,5 +1,7 @@
 package by.bsuir.german.service;
 
+import by.bsuir.german.entity.Storage;
+
 import java.io.*;
 
 public class Serialization {
