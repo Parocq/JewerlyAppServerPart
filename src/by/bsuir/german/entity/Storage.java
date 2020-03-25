@@ -73,6 +73,4 @@ public class Storage implements Serializable {
     public List<EarringBase> getEarringBases() {
         return earringBases;
     }
-
-
 }

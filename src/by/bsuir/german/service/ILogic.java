@@ -4,32 +4,34 @@ import by.bsuir.german.entity.*;
 import javafx.collections.ObservableList;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.List;
 
 public interface ILogic extends Remote {
-    void fillStorage(Storage st);
 
-    void sortMetalByTitle(List<Metal> list);
+    void fillStorage(Storage st) throws RemoteException;
 
-    void sortStonesByTitle(List<Stone> list);
+    void sortMetalByTitle(List<Metal> list) throws RemoteException;
 
-    void sortRingBaseByTitle(List<RingBase> list);
+    void sortStonesByTitle(List<Stone> list) throws RemoteException;
 
-    void sortEarringBaseByTitle(List<EarringBase> list);
+    void sortRingBaseByTitle(List<RingBase> list) throws RemoteException;
 
-    void sortNecklaceBaseByTitle(List<NecklaceBase> list);
+    void sortEarringBaseByTitle(List<EarringBase> list) throws RemoteException;
 
-    void sortAdornmentByTitle(List<Adornment> list);
+    void sortNecklaceBaseByTitle(List<NecklaceBase> list) throws RemoteException;
 
-    void sortStonesByPrice(List<Stone> list);
+    void sortAdornmentByTitle(List<Adornment> list) throws RemoteException;
 
-    double calculateWeight(Adornment adornment);
+    void sortStonesByPrice(List<Stone> list) throws RemoteException;
 
-    double calculatePrice(Adornment adornment);
+    double calculateWeight(Adornment adornment) throws RemoteException;
 
-    List<Stone> searchForTransparence(double start, double finish);
+    double calculatePrice(Adornment adornment) throws RemoteException;
 
-    ObservableList<Stone> convertArrayListToObservableListS();
+    List<Stone> searchForTransparence(double start, double finish) throws RemoteException;
 
-    ObservableList<Metal> convertArrayListToObservableListM();
+//    ObservableList<Stone> convertArrayListToObservableListS() throws RemoteException;
+//
+//    ObservableList<Metal> convertArrayListToObservableListM() throws RemoteException;
 }

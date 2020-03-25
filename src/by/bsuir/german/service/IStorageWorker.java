@@ -6,27 +6,41 @@ import by.bsuir.german.interfaces.ITitle;
 import javafx.collections.ObservableList;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.List;
 
-interface IStorageWorker extends Remote {
+public interface IStorageWorker extends Remote {
 
-    void fillAdornmentObservableList();
+    void fillAdornmentObservableList() throws RemoteException;
 
-    void addAdormentExtendedOnStock (AdornmentExtended adornmentExtended);
+//    ObservableList<AdornmentExtended> getAdornmentExtendedList() throws RemoteException;
 
-    void addRingBaseOnStock(RingBase ringBase);
+//    void addAdornmentExtendedOnStock(AdornmentExtended adornmentExtended) throws RemoteException;
 
-    void addNecklaceBaseOnStock(NecklaceBase necklaceBase);
+    void addRingBaseOnStock(RingBase ringBase) throws RemoteException;
 
-    void addEarringBaseOnStock(EarringBase earringBase);
+    void addNecklaceBaseOnStock(NecklaceBase necklaceBase) throws RemoteException;
 
-    void addStoneOnStock(Stone stone);
+    void addEarringBaseOnStock(EarringBase earringBase) throws RemoteException;
 
-    void addMetalOnStock(Metal metal);
+    void addStoneOnStock(Stone stone) throws RemoteException;
 
-    void addAdornmentOnStock(Adornment adornment);
+    void addMetalOnStock(Metal metal) throws RemoteException;
 
-    String getTitles(List<? extends ITitle> objects);
+    void addAdornmentOnStock(Adornment adornment) throws RemoteException;
 
-    String getAdormentTitles();
+    String getTitles(List<? extends ITitle> objects) throws RemoteException;
+
+    String getAdornmentTitles() throws RemoteException;
+
+     List<Stone> getStones()throws RemoteException;
+
+    public List<Metal> getMetals()throws RemoteException ;
+
+    public List<Adornment> getAdornments()throws RemoteException;
+
+    public List<RingBase> getRingBases()throws RemoteException;
+    public List<NecklaceBase> getNecklaceBases() throws RemoteException;
+
+    public List<EarringBase> getEarringBases() throws RemoteException ;
 }

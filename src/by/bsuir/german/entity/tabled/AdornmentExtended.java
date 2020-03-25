@@ -3,8 +3,11 @@ package by.bsuir.german.entity.tabled;
 import by.bsuir.german.entity.Adornment;
 import by.bsuir.german.service.Logic;
 import by.bsuir.german.entity.Storage;
+import by.bsuir.german.service.StorageWorker;
 
-public class AdornmentExtended {
+import java.io.Serializable;
+
+public class AdornmentExtended implements Serializable {
     private String title;
     private String type;
     private double price;
@@ -12,12 +15,12 @@ public class AdornmentExtended {
     private String baseTitle;
     private String usedStones;
 
-    private Storage storage = new Storage();
-    private Logic logic = new Logic(storage);
+    private StorageWorker storageWorker;
+    private Logic logic;
 
-    public AdornmentExtended(Logic logic, Storage storage) {
+    public AdornmentExtended(Logic logic, StorageWorker storageWorker) {
         this.logic = logic;
-        this.storage = storage;
+        this.storageWorker = storageWorker;
     }
 
 
@@ -39,7 +42,7 @@ public class AdornmentExtended {
             this.baseTitle = adornment.getNecklace().getTitle();
         } else this.baseTitle = adornment.getRing().getTitle();
 
-        this.usedStones = storage.getTitles(adornment.getUsedStones());
+        this.usedStones = storageWorker.getTitles(adornment.getUsedStones());
     }
 
     public String getTitle() {

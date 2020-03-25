@@ -11,10 +11,11 @@ import java.util.List;
 
 public class Logic implements ILogic {
 
+    private StorageWorker storageWorker;
     private Storage storage;
 
-    public Logic(Storage storage) {
-        this.storage = storage;
+    public Logic(Storage storage, StorageWorker storageWorker) {
+        this.storageWorker = storageWorker;
     }
 
     public void fillStorage(Storage st) {
@@ -26,22 +27,22 @@ public class Logic implements ILogic {
         List<EarringBase> earringBases = st.getEarringBases();
 
         for (int i = 0; i < stones.size(); i++) {
-            storage.addStoneOnStock(stones.get(i));
+            storageWorker.addStoneOnStock(stones.get(i));
         }
         for (int i = 0; i < metals.size(); i++) {
-            storage.addMetalOnStock(metals.get(i));
+            storageWorker.addMetalOnStock(metals.get(i));
         }
         for (int i = 0; i < adornments.size(); i++) {
-            storage.addAdornmentOnStock(adornments.get(i));
+            storageWorker.addAdornmentOnStock(adornments.get(i));
         }
         for (int i = 0; i < ringBases.size(); i++) {
-            storage.addRingBaseOnStock(ringBases.get(i));
+            storageWorker.addRingBaseOnStock(ringBases.get(i));
         }
         for (int i = 0; i < necklaceBases.size(); i++) {
-            storage.addNecklaceBaseOnStock(necklaceBases.get(i));
+            storageWorker.addNecklaceBaseOnStock(necklaceBases.get(i));
         }
         for (int i = 0; i < earringBases.size(); i++) {
-            storage.addEarringBaseOnStock(earringBases.get(i));
+            storageWorker.addEarringBaseOnStock(earringBases.get(i));
         }
     }
 
