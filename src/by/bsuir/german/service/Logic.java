@@ -116,16 +116,4 @@ public class Logic implements ILogic {
         }
         return suit;
     }
-
-    public ObservableList<Stone> convertArrayListToObservableListS() {
-        ObservableList<Stone> observableList =  FXCollections.observableArrayList();
-        observableList.addAll(storage.getStones());
-        return observableList;
-    }
-
-    public ObservableList<Metal> convertArrayListToObservableListM() {
-        ObservableList<Metal> observableList =  FXCollections.observableArrayList();
-        observableList.addAll(storage.getMetals());
-        return observableList;
-    }
 }

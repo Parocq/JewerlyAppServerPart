@@ -37,18 +37,6 @@ public class StorageWorker implements IStorageWorker {
         return stringBuilder.toString();
     }
 
-
-    public void fillAdornmentObservableList (){
-        for (Adornment adornment:storage.getAdornments()){
-            storage.getAdornmentExtendedList().add(new AdornmentExtended(adornment));
-        }
-    }
-
-//    @Override
-//    public ObservableList<AdornmentExtended> getAdornmentExtendedList() throws RemoteException {
-//        return storage.getAdornmentExtendedList();
-//    }
-
     public void addRingBaseOnStock(RingBase ringBase) {
         storage.getRingBases().add(ringBase);
     }
@@ -72,8 +60,6 @@ public class StorageWorker implements IStorageWorker {
     public void addAdornmentOnStock(Adornment adornment) {
         storage.getAdornments().add(adornment);
     }
-
-//    public void addAdornmentExtendedOnStock(AdornmentExtended adornmentExtended){storage.getAdornmentExtendedList().add(adornmentExtended);}
 
     public List<Stone> getStones() {
         return storage.getStones();

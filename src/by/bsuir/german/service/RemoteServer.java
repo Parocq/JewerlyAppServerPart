@@ -2,10 +2,7 @@ package by.bsuir.german.service;
 
 import by.bsuir.german.comporator.*;
 import by.bsuir.german.entity.*;
-import by.bsuir.german.entity.tabled.AdornmentExtended;
 import by.bsuir.german.interfaces.ITitle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -121,18 +118,6 @@ public class RemoteServer implements IRemoteServer {
         return suit;
     }
 
-//    public ObservableList<Stone> convertArrayListToObservableListS() throws RemoteException {
-//        ObservableList<Stone> observableList =  FXCollections.observableArrayList();
-//        observableList.addAll(storage.getStones());
-//        return observableList;
-//    }
-//
-//    public ObservableList<Metal> convertArrayListToObservableListM() throws RemoteException {
-//        ObservableList<Metal> observableList =  FXCollections.observableArrayList();
-//        observableList.addAll(storage.getMetals());
-//        return observableList;
-//    }
-
     public String getTitles(List<? extends ITitle> objects) throws RemoteException {
         StringBuilder stringBuilder = new StringBuilder();
         if (objects.isEmpty()) {
@@ -153,18 +138,6 @@ public class RemoteServer implements IRemoteServer {
         }
         return stringBuilder.toString();
     }
-
-
-    public void fillAdornmentObservableList () throws RemoteException{
-        for (Adornment adornment:storage.getAdornments()){
-            storage.getAdornmentExtendedList().add(new AdornmentExtended(adornment));
-        }
-    }
-
-//    @Override
-//    public ObservableList<AdornmentExtended> getAdornmentExtendedList() throws RemoteException {
-//        return  storage.getAdornmentExtendedList();
-//    }
 
     public void addRingBaseOnStock(RingBase ringBase) throws RemoteException {
         storage.getRingBases().add(ringBase);
@@ -190,8 +163,6 @@ public class RemoteServer implements IRemoteServer {
         storage.getAdornments().add(adornment);
     }
 
-//    public ObservableList<AdornmentExtended> getAdornmentExtendedList () {return  adornmentExtendedList;}
-
     public List<Stone> getStones()throws RemoteException {
         return storage.getStones();
     }
@@ -216,7 +187,7 @@ public class RemoteServer implements IRemoteServer {
         return storage.getEarringBases();
     }
 
-//    public void addAdornmentExtendedOnStock(AdornmentExtended adornmentExtended) throws RemoteException {
-//        storage.getAdornmentExtendedList().add(adornmentExtended);
-//    }
+    public void printMessageOnServer(String s) throws RemoteException{
+        System.out.println(s);
+    }
 }

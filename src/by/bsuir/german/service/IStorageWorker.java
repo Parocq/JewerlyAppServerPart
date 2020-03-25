@@ -11,12 +11,6 @@ import java.util.List;
 
 public interface IStorageWorker extends Remote {
 
-    void fillAdornmentObservableList() throws RemoteException;
-
-//    ObservableList<AdornmentExtended> getAdornmentExtendedList() throws RemoteException;
-
-//    void addAdornmentExtendedOnStock(AdornmentExtended adornmentExtended) throws RemoteException;
-
     void addRingBaseOnStock(RingBase ringBase) throws RemoteException;
 
     void addNecklaceBaseOnStock(NecklaceBase necklaceBase) throws RemoteException;
@@ -33,14 +27,15 @@ public interface IStorageWorker extends Remote {
 
     String getAdornmentTitles() throws RemoteException;
 
-     List<Stone> getStones()throws RemoteException;
+    List<Stone> getStones() throws RemoteException;
 
-    public List<Metal> getMetals()throws RemoteException ;
+    List<Metal> getMetals() throws RemoteException;
 
-    public List<Adornment> getAdornments()throws RemoteException;
+    List<Adornment> getAdornments() throws RemoteException;
 
-    public List<RingBase> getRingBases()throws RemoteException;
-    public List<NecklaceBase> getNecklaceBases() throws RemoteException;
+    List<RingBase> getRingBases() throws RemoteException;
 
-    public List<EarringBase> getEarringBases() throws RemoteException ;
+    List<NecklaceBase> getNecklaceBases() throws RemoteException;
+
+    List<EarringBase> getEarringBases() throws RemoteException;
 }
